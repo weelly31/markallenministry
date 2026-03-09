@@ -22,6 +22,7 @@ const roles = [
       { src: "img/preaching3.jpg", caption: "Preaching" },
       { src: "img/preaching4.jpg", caption: "Preaching" },
       { src: "img/preaching5.jpg", caption: "Preaching" },
+      { src: "img/pastor.jpg", caption: "Preaching" },
     ],
   },
   {
@@ -35,9 +36,9 @@ const roles = [
       "Develop themes, program flow, and ministry initiatives",
     ],
     photos: [
-      { src: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80", caption: "Event planning" },
-      { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80", caption: "Program coordination" },
-      { src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80", caption: "Church event" },
+      { src: "img/adviser.jpg", caption: "Event planning" },
+      { src: "img/adviser4.jpg", caption: "Program coordination" },
+      { src: "img/adviser3.jpg", caption: "Church event" },
     ],
   },
   {
@@ -51,9 +52,8 @@ const roles = [
       "Facilitate discussions on faith, career, and Christian living",
     ],
     photos: [
-      { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80", caption: "Mentorship" },
-      { src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80", caption: "Discussion" },
-      { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80", caption: "Fellowship" },
+      { src: "img/adviser1.jpg", caption: "Mentorship" },
+      { src: "img/adviser2.jpg", caption: "Discussion" },
     ],
   },
   {
@@ -87,6 +87,10 @@ const roles = [
       { src: "img/instrument1.jpg", caption: "Worship" },
       { src: "img/instrument2.jpg", caption: "Music ministry" },
       { src: "img/instrument3.jpg", caption: "Praise & worship" },
+      { src: "img/instrument4.jpg", caption: "Praise & worship" },
+      { src: "img/instrument5.jpg", caption: "Praise & worship" },
+     { src: "img/instrument6.jpg", caption: "Praise & worship" },
+     { src: "img/instrument7.jpg", caption: "Special Number" },
  
     ],
   },
@@ -104,6 +108,7 @@ const roles = [
       { src: "img/mens1.jpg", caption: "Men's fellowship" },
       { src: "img/mens2.jpg", caption: "Discipleship" },
       { src: "img/mens3.jpg", caption: "Accountability" },
+      { src: "img/mens4.jpg", caption: "Small Groups" },
     ],
   },
 ];

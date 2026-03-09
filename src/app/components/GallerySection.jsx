@@ -29,7 +29,67 @@ const galleryImages = [
   },
   {
     src: "img/worship5.jpg",
-    caption: "Community Outreach",
+    caption: "Community Service-Giving packed",
+  },
+{
+    src: "img/worship6.jpg",
+    caption: "Community Service-Giving packed",
+  },
+  {
+    src: "img/worship7.jpg",
+    caption: "Community Service-Giving packed",
+  },
+   {
+    src: "img/biblestudy.jpg",
+    caption: "Bible Study",
+  },
+  {
+    src: "img/biblestudy2.jpg",
+    caption: "Bible Study",
+  },
+   {
+    src: "img/biblestudy3.jpg",
+    caption: "Bible Study",
+  },
+    {
+    src: "img/gallery1.jpg",
+    caption: "Fellowship",
+  },
+  {
+    src: "img/gallery2.jpg",
+    caption: "Children Ministry",
+  },
+  {
+    src: "img/gallery3.jpg",
+    caption: "Christmas Party",
+  },
+  {
+    src: "img/gallery4.jpg",
+    caption: "Youth & Young Professionals Fellowship",
+  },
+  {
+    src: "img/gallery5.jpg",
+    caption: "DVBS | Children Ministry",
+  },
+  {
+    src: "img/gallery6.jpg",
+    caption: "Youth & Young Professionals Fellowshi",
+  },
+  {
+    src: "img/gallery7.jpg",
+    caption: "Christmas Party 2025",
+  },
+  {
+    src: "img/gallery8.jpg",
+    caption: "Koinonia",
+  },
+  {
+    src: "img/gallery9.jpg",
+    caption: "Leaders",
+  },
+  {
+    src: "img/gallery10.jpg",
+    caption: "Anniversary Special",
   },
 ];
 
