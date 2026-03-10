@@ -145,14 +145,14 @@ export default function MinistryTimeline() {
               >
                 {/* Card — equal half */}
                 <div className="w-full md:flex-1">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-300 group h-full">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-all duration-300 group h-full">
                     {/* Period badge */}
                     <span className="inline-block text-[#d4a853] text-xs font-semibold tracking-wider uppercase bg-[#d4a853]/10 px-3 py-1 rounded-full mb-4">
                       {role.period}
                     </span>
 
                     <div className="flex items-start gap-3 mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-[#d4a853]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#d4a853]/20 transition-colors">
+                      <div className="w-11 h-11 rounded-xl bg-[#d4a853]/10 flex items-center justify-center shrink-0 group-hover:bg-[#d4a853]/20 transition-colors">
                         <role.icon className="w-5 h-5 text-[#d4a853]" />
                       </div>
                       <div>
@@ -164,7 +164,7 @@ export default function MinistryTimeline() {
                     <ul className="space-y-2.5">
                       {role.items.map((item, j) => (
                         <li key={j} className="text-gray-300 text-sm flex items-start gap-2.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#d4a853]/70 mt-1.5 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#d4a853]/70 mt-1.5 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -173,7 +173,7 @@ export default function MinistryTimeline() {
                 </div>
 
                 {/* Divider line on desktop */}
-                <div className="hidden md:flex flex-col items-center gap-2 flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center gap-2 shrink-0">
                   <div className="w-px h-16 bg-[#d4a853]/20" />
                   <div className="w-3 h-3 rounded-full bg-[#d4a853] ring-4 ring-[#0f172a]" />
                   <div className="w-px h-16 bg-[#d4a853]/20" />
@@ -181,7 +181,9 @@ export default function MinistryTimeline() {
 
                 {/* Photos — equal half */}
                 <div className="w-full md:flex-1 flex justify-center">
-                  <StackedPhotos images={role.photos} label={role.title} />
+                  <div className="w-full flex justify-center">
+                    <StackedPhotos images={role.photos} label={role.title} />
+                  </div>
                 </div>
               </motion.div>
             );

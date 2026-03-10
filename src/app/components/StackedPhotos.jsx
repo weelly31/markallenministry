@@ -22,16 +22,16 @@ export default function StackedPhotos({ images }) {
 
   const visibleCards = stack.slice(0, 3);
 
-  // Responsive: use a ref-free approach with CSS variables
-  const W = 220;
-  const H = 260;
+  // Keep stack centered on narrow screens by using responsive dimensions.
+  const W = "min(220px, calc(100vw - 3rem))";
+  const H = "calc(min(220px, calc(100vw - 3rem)) * 1.18)";
 
   return (
-    <div className="flex flex-col items-center gap-4 select-none w-full">
+    <div className="flex flex-col items-center gap-4 select-none w-full max-w-65 mx-auto">
       {/* Stack container */}
       <div
         className="relative cursor-pointer mx-auto"
-        style={{ width: W, height: H + 16 }}
+        style={{ width: `calc(${W} + 28px)`, height: `calc(${H} + 28px)` }}
         onClick={handleClick}
         title="Click to view more"
       >
@@ -40,11 +40,11 @@ export default function StackedPhotos({ images }) {
           <div
             className="absolute rounded-2xl overflow-hidden border-2 border-white/80 shadow-lg"
             style={{
-              width: W - 30,
-              height: H - 30,
-              top: 16,
+              width: `calc(${W} - 18px)`,
+              height: `calc(${H} - 18px)`,
+              top: 18,
               left: "50%",
-              transform: "translateX(-50%) rotate(6deg)",
+              transform: "translateX(calc(-50% - 12px)) rotate(-8deg)",
               zIndex: 1,
             }}
           >
@@ -58,11 +58,11 @@ export default function StackedPhotos({ images }) {
           <div
             className="absolute rounded-2xl overflow-hidden border-2 border-white/90 shadow-lg"
             style={{
-              width: W - 16,
-              height: H - 16,
-              top: 8,
+              width: `calc(${W} - 8px)`,
+              height: `calc(${H} - 8px)`,
+              top: 10,
               left: "50%",
-              transform: "translateX(-50%) rotate(-3deg)",
+              transform: "translateX(calc(-50% + 10px)) rotate(5deg)",
               zIndex: 2,
             }}
           >
@@ -72,36 +72,40 @@ export default function StackedPhotos({ images }) {
         )}
 
         {/* Front card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={stack[0].src}
-            initial={{ rotateY: -90, opacity: 0 }}
-            animate={{ rotateY: 0, opacity: 1 }}
-            exit={{ rotateY: 90, opacity: 0, scale: 0.92 }}
-            transition={{ duration: 0.3 }}
-            className="absolute rounded-2xl overflow-hidden border-2 border-white shadow-2xl"
-            style={{
-              width: W,
-              height: H,
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              zIndex: 3,
-            }}
-          >
-            <img
-              src={stack[0].src}
-              alt={stack[0].caption || ""}
-              className="w-full h-full object-cover"
-            />
-            {/* Caption bar */}
-            {stack[0].caption && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3">
-                <p className="text-white text-xs font-medium">{stack[0].caption}</p>
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
+        <div
+          className="absolute"
+          style={{
+            width: W,
+            height: H,
+            top: 4,
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 3,
+          }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={stack[0].src}
+              initial={{ rotateY: -90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: 90, opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-2xl overflow-hidden border-2 border-white shadow-2xl w-full h-full"
+            >
+              <img
+                src={stack[0].src}
+                alt={stack[0].caption || ""}
+                className="w-full h-full object-cover"
+              />
+              {/* Caption bar */}
+              {stack[0].caption && (
+                <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent px-4 py-3">
+                  <p className="text-white text-xs font-medium">{stack[0].caption}</p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* Count badge */}
         {stack.length > 1 && (
